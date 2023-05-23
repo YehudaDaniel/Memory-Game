@@ -13,6 +13,10 @@
   font-size: 22px;
 }
 
+.finishTime{
+  font-size: 20px;
+}
+
 .wheel-and-hamster {
   --dur: 1s;
   position: relative;

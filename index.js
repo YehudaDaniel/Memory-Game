@@ -1,6 +1,10 @@
 const container = document.querySelector('.container');
 const score = document.querySelector('.score span');
 const form = document.querySelector('#form');
+let minutesLabel = document.querySelectorAll('.minutes');
+let secondsLabel = document.querySelectorAll('.seconds');
+let totalSeconds = 0;
+let myInterval;
 
 //global data
 let username;
@@ -33,6 +37,8 @@ function initGame(){
     //showing the game
     document.querySelector('.head').style.display = 'flex';
     container.style.display = 'grid';
+
+    myInterval = setInterval(setTime, 1000);
     
 
     //setting the number of pairs
@@ -111,10 +117,6 @@ function match(first, second){
     }
 }
 
-let minutesLabel = document.querySelectorAll('.minutes');
-let secondsLabel = document.querySelectorAll('.seconds');
-let totalSeconds = 0;
-let myInterval = setInterval(setTime, 1000);
 
 function isDone(){
     const matches = document.querySelectorAll('.match');
