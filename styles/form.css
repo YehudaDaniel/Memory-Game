@@ -1,0 +1,121 @@
+/* you can choose any color you want. don't be afraid to experiment  */
+/* Stylesheet for the opening information form */
+.form{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.input,
+.formButton {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    padding: 10px;
+    border: 0.1px solid #ff6a0e;
+}
+
+.formButton {
+    background: #ff6a0e;
+    border: none;
+    cursor: pointer;
+}
+
+.wrapper {
+    position: relative;
+    transform: skewY(-14deg);
+}
+
+.wrapper li,
+.formButton {
+    position: relative;
+    list-style: none;
+    width: 250px;
+    z-index: var(--i);
+    transition: 0.3s;
+    color: white;
+}
+
+.wrapper li::before,
+.formButton::before {
+    position: absolute;
+    content: "";
+    background: #ff6a0e;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 40px;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.3s;
+}
+
+.wrapper li::after,
+.formButton::after {
+    position: absolute;
+    content: "";
+    background: #6d74e3;
+    width: 250px;
+    height: 40px;
+    top: -40px;
+    left: 0;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.3s;
+}
+
+.wrapper li:nth-child(1)::after,
+.wrapper li:nth-child(1)::before {
+    background-color: #ffb570;
+}
+
+.wrapper li:nth-child(2)::after,
+.wrapper li:nth-child(2)::before {
+    background-color: #fe8121;
+}
+
+li .input {
+    outline: none;
+    border: none;
+    color: white;
+}
+
+li .input::placeholder {
+    color: white;
+}
+
+li:nth-child(1) .input {
+    background: #ffb570;
+}
+
+li:nth-child(2) .input {
+    background: #fe8121;
+}
+
+li:nth-child(1) .input:focus {
+    outline: none;
+    border: 3.5px solid #ffc870;
+}
+
+li:nth-child(2) .input:focus {
+    outline: none;
+    border: 3.5px solid #ff9d14;
+}
+
+.wrapper li:hover,
+.formButton:hover {
+    transform: translateX(-20px);
+}
+
+
+/* submit button hover color */
+.formButton:hover,
+.formButton:hover::before,
+.formButton:hover::after {
+    background: #37d825;
+}
+
+.formButton:active {
+    transform: translateX(0px);
+}
